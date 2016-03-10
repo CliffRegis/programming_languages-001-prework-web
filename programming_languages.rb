@@ -44,8 +44,13 @@
 def reformat_languages(languages)
   new_hash = {}
 
-  languages.each do |key, val|
-      new_hash[key] = val
+  languages.collect do |key, val|
+      val.collect do |x, y|
+         new_hash[x]= y
+          arr =[]
+        y.merge!(style: arr << key)
+
+      end
   end
       puts new_hash
 end
